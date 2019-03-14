@@ -1,0 +1,2 @@
+module PapesHelper
+end
