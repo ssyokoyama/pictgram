@@ -8,11 +8,11 @@ def new
 end
 
 def create
-  @comment = current.comments.new (comment_params)
-  @comment.user_id = current.id
+  @comment = current_user.comments.new (comment_params)
+  @comment.user_id = current_user.id
 
 
-if comment.save
+if @comment.save
   redirect_to topics_path, success: '投稿に成功しました'
 else
   redirect_to topics_path, danger: '投稿に失敗しました'
@@ -21,6 +21,6 @@ end
 
 private
 def comment_params
-  params.require(:comment).permit(:topic_id, :commenter)
+  params.require(:comment).permit(:topic_id, :content)
   end
 end
