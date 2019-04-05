@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:favorite_users)
   end
+
   def new
     @topic = Topic.new
   end
@@ -17,6 +18,7 @@ class TopicsController < ApplicationController
       render :new
     end
   end
+
 
   private
   def topic_params
