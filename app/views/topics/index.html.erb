@@ -16,24 +16,24 @@
               <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
               <% end %>
 
-            <% else %>
+              <% else %>
 
             <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
-              <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
+            <%= image_tag 'icons/heart.png', class: 'topic-index-icon red-favorite-icon' %>
               <% end %>
               <% end %>
 
               <%= topic.favorite_users.count %>
 
 
-              <%= link_to new_comment_path(topic_id: topic.id, name: "test"), method: :get do %>
-           <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
-           <% end %>
+            <%= link_to new_comment_path(topic_id: topic.id, name: "test"), method: :get do %>
+             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+             <% end %>
 
 
-          <p class="topic-text"><%= topic.description %></p>
-          <h3 class="topic-text">コメント</h3>
-          <% topic.comments.each do |comment| %>
+            <p class="topic-text"><%= topic.description %></p>
+            <h3 class="topic-text">コメント</h3>
+            <% topic.comments.each do |comment| %>
 
             <p class="topic-text">
               <%= comment.content %>
