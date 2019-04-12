@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'bcrypt'
 gem 'bootstrap-sass'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -55,7 +55,7 @@ group :development do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
-  gem 'bcrypt'
+
 end
 
 group :production do
